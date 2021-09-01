@@ -1,0 +1,40 @@
+/* 
+1. Position
+2. Box Model
+3. Typography
+4. Visuals
+5. Others
+*/
+
+// THEME COLORS
+$brand-500: #F7931A;
+$brand-200: #FFE9D5;
+$secondary-500: #1A9AF7;
+$secondary-200: #e7f5ff;
+$warm-dark: #201E1C;
+$dark: #282623;
+$gray: #bababa;
+$light: #FAF8F7;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: -apple-system, BlinkMacSystemFont, 'DM Sans', 'Segoe UI', 'Roboto', 'Oxygen', sans-serif;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+// linear-gradient(207.8deg, #201E1C 16.69%, #F7931A 100%);
