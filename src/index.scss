@@ -1,3 +1,4 @@
+@use '/src/brand';
 /* 
 1. Position
 2. Box Model
@@ -6,15 +7,6 @@
 5. Others
 */
 
-// THEME COLORS
-$brand-500: #F7931A;
-$brand-200: #FFE9D5;
-$secondary-500: #1A9AF7;
-$secondary-200: #e7f5ff;
-$warm-dark: #201E1C;
-$dark: #282623;
-$gray: #bababa;
-$light: #FAF8F7;
 
 * {
   box-sizing: border-box;
@@ -36,5 +28,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-// linear-gradient(207.8deg, #201E1C 16.69%, #F7931A 100%);

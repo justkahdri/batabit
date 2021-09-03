@@ -1,0 +1,70 @@
+@use '/src/brand';
+
+.header {
+  padding-top: 15px;
+  position: relative;
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 320px;
+  justify-content: center;
+  text-align: center;
+  height: 334px;
+  align-items: center;
+  color: brand.$white;
+  background: linear-gradient(207.8deg, brand.$warm-dark 16.69%, brand.$bitcoin-orange 100%);
+
+  &--logo {
+    width: 150px;
+    height: 24px;
+    margin-top: 60px;
+  }
+
+  &--title-container {
+    width: 90%;
+    min-width: 288px;
+    max-width: 900px;
+    height: 218px;
+    margin-top:35px;
+    >h1 {
+      font-weight: bold;
+      line-height: 2.6rem;
+      font-size: 2.4rem;
+    }
+    >p {
+      margin-top: 25px;
+      font-weight: 500;
+      line-height: 1.8rem;
+      font-size: 1.4rem;
+    }
+  }
+
+  &--title-container &--button {
+    position: absolute;
+    top: 270px;
+    left: calc(50% - 115px);
+    display: block;
+    margin-top: 35px;
+    padding: 15px;
+    width: 230px;
+    height: 48px;
+    background-color: brand.$light;
+
+    // SHADOW
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: brand.$dark;
+
+    >span {
+      display: inline-block;
+      width: 13px;
+      height: 8px;
+      margin-left: 10px;
+      background-image: url(../assets/downarrow.svg);
+    }
+  }
+}
