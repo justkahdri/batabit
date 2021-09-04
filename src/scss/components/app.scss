@@ -1,0 +1,167 @@
+@use '../abstracts/colors' as clr;
+@use '../abstracts/fonts' as *;
+
+@mixin centered {
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+@mixin titles {
+  width: 90%;
+  min-width: 288px;
+  max-width: 900px;
+
+  >h1, >h2 {
+    font-weight: bold;
+    line-height: 2.6rem;
+    font-size: 2.4rem;
+  }
+  >p {
+    margin-top: 24px;
+    font-weight: 500;
+    line-height: 1.8rem;
+    font-size: 1.4rem;
+  }
+}
+// @each $header in h1, h2 {
+//   #{$header} {
+//     font-weight: bold;
+//     line-height: 2.6rem;
+//     font-size: 2.4rem;
+//   }
+// }
+.header {
+  padding-top: 15px;
+  padding-bottom: 61px;
+  position: relative;
+  width: 100%;
+  min-width: 320px;
+  height: 334px;
+  color: clr.$white;
+  background: linear-gradient(207.8deg, clr.$warm-dark 16.69%, clr.$bitcoin-orange 100%);
+  @include centered;
+
+  &__logo {
+    width: 150px;
+    height: 24px;
+    margin-top: 42px;
+    margin-bottom: 32px;
+  }
+
+  &__title-container {
+    @include titles;
+  }
+
+  &__title-container &__button {
+    position: absolute;
+    top: 270px;
+    left: calc(50% - 115px);
+    display: block;
+    margin-top: 35px;
+    padding: 15px;
+    width: 230px;
+    height: 48px;
+    background-color: clr.$light;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: clr.$dark;
+
+    >span {
+      display: inline-block;
+      width: 13px;
+      height: 8px;
+      margin-left: 10px;
+      background-image: url(../assets/downarrow.svg);
+    }
+  }
+}
+
+.exchange {
+  padding: 64px 0;
+  background-color: clr.$light;
+  @include centered;
+
+  &__title-container {
+    margin: 48px 0;
+    @include titles;
+
+    >p {
+      color: clr.$dark-gray;
+    }
+  }
+
+  &__tables-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+
+    >img {
+      margin-top: 32px;
+    }
+  }
+
+  &__table-container {
+    width: 70%;
+    font-family: $secondary-font;
+    min-width: 190px;
+    max-width: 500px;
+
+    >h3 {
+      text-align: left;
+      margin-bottom: 13px;
+      margin-left: 12px;
+      color: clr.$bitcoin-orange;
+      font-weight: bold;
+      font-size: 1.8rem;
+      line-height: 2.3rem;
+    }
+  }
+
+  &__table {
+    width: 90%;
+    height: 159px;
+    min-width: 190px;
+    max-height: 300px;
+
+    td {
+      width: 50%;
+      padding: 12px 14px;
+      background-color: clr.$white;
+    }
+    td:first-child {
+      font-size: 1.6rem;
+      line-height: 1.9rem;
+      text-align: left;
+      color: clr.$gray;
+      font-weight: 500;
+    }
+    td:last-child {
+      font-size: 1.4rem;
+      line-height: 1.7rem;
+      color: clr.$dark-gray;
+      img {
+        margin-left: 8px;
+      }
+    }
+
+    $rows-borders:
+    "first" "first" (14px 0 0 0),
+    "first" "last" (0 14px 0 0),
+    "last" "first" (0 0 0 14px),
+    "last" "last" (0 0 14px 0);
+
+    @each $row, $column, $radius in $rows-borders {
+      tr:#{$row}-child > td:#{$column}-child {
+        border-radius: $radius;
+      }
+    }
+  }
+}
