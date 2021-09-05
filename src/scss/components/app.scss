@@ -1,32 +1,8 @@
 @use '../abstracts/colors' as clr;
+@use '../abstracts/sizes';
 @use '../abstracts/fonts' as *;
+@use '../abstracts/mixins' as *;
 
-@mixin centered {
-  display:flex;
-  flex-direction: column;
-  width: 100%;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-}
-
-@mixin titles {
-  width: 90%;
-  min-width: 288px;
-  max-width: 900px;
-
-  >h1, >h2 {
-    font-weight: bold;
-    line-height: 2.6rem;
-    font-size: 2.4rem;
-  }
-  >p {
-    margin-top: 24px;
-    font-weight: 500;
-    line-height: 1.8rem;
-    font-size: 1.4rem;
-  }
-}
 // @each $header in h1, h2 {
 //   #{$header} {
 //     font-weight: bold;
@@ -68,13 +44,13 @@
     background-color: clr.$light;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border: none;
-    border-radius: 5px;
+    border-radius: sizes.$md;
     font-size: 1.4rem;
     font-weight: bold;
     text-decoration: none;
     color: clr.$dark;
 
-    >span {
+    > span {
       display: inline-block;
       width: 13px;
       height: 8px;
@@ -93,7 +69,7 @@
     margin: 48px 0;
     @include titles;
 
-    >p {
+    > p {
       color: clr.$dark-gray;
     }
   }
@@ -102,22 +78,21 @@
     width: 100%;
     display: flex;
     justify-content: space-evenly;
-
-    >img {
-      margin-top: 32px;
-    }
   }
 
   &__table-container {
     width: 70%;
     font-family: $secondary-font;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     min-width: 190px;
     max-width: 500px;
 
-    >h3 {
-      text-align: left;
+    > h3 {
+      align-self: flex-start;
       margin-bottom: 13px;
-      margin-left: 12px;
+      margin-left: 10%;
       color: clr.$bitcoin-orange;
       font-weight: bold;
       font-size: 1.8rem;
@@ -152,16 +127,21 @@
       }
     }
 
-    $rows-borders:
-    "first" "first" (14px 0 0 0),
-    "first" "last" (0 14px 0 0),
-    "last" "first" (0 0 0 14px),
-    "last" "last" (0 0 14px 0);
+    $rows-borders: "first" "first" (sizes.$md 0 0 0), "first" "last" (0 sizes.$md 0 0),
+      "last" "first" (0 0 0 sizes.$md), "last" "last" (0 0 sizes.$md 0);
 
     @each $row, $column, $radius in $rows-borders {
       tr:#{$row}-child > td:#{$column}-child {
         border-radius: $radius;
       }
     }
+  }
+
+  &__updated {
+    margin-top: 16px;
+    padding: 8px;
+    font-size: 1.4rem;
+    border-radius: sizes.$md;
+    background-color: clr.$soft-orange;
   }
 }
