@@ -1,0 +1,84 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/colors' as clr;
+@use '../abstracts/fonts' as *;
+@use '../abstracts/sizes';
+
+.pricing {
+  padding: 64px 0;
+  background-color: clr.$light;
+  @include centered;
+
+  &__title-container {
+    @include titles;
+
+    p {
+      color: clr.$dark-gray;
+    }
+  }
+
+  &__cards-container {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+.price-card {
+  width: 70%;
+  // font-family: $secondary-font;
+  padding: 24px 16px;
+  font-size: 1.2rem;
+  position: relative;
+  min-width: 190px;
+  max-width: 500px;
+  background-color: clr.$white;
+  border-radius: sizes.$md;
+  box-shadow: sizes.$shadow-md;
+
+  &__overbox {
+    position: absolute;
+    left: calc(50% - 48px);
+    top: -15.5px;
+    background-color: clr.$bitcoin-orange;
+    border-radius: sizes.$md;
+    padding: 8px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: clr.$white;
+  }
+
+  &__category {
+    margin: 8px 0;
+    font-size: 1.4rem;
+  }
+
+  &__content {
+    font-family: $secondary-font;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &__tag {
+    font-size: 5.2rem;
+    font-weight: 700;
+    position: relative;
+
+    &::before {
+      content: "$";
+      font-size: 1rem;
+      font-weight: 500;
+      position: absolute;
+      color: clr.$dark-gray;
+      top: 16px;
+      left: -10px;
+    }
+  }
+
+  &__savings {
+    margin: 16px 0;
+    line-height: 1.4rem;
+    color: clr.$dark-gray;
+  }
+}

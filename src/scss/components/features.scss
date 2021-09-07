@@ -1,11 +1,14 @@
 @use '../abstracts/colors' as clr;
 @use '../abstracts/mixins' as *;
+@use '../abstracts/sizes';
+
+$item-spacing: 16px;
 
 .features {
   background-color: clr.$warm-dark;
   position: relative;
   padding-top: 64px;
-  padding-bottom: 31px;
+  padding-bottom: calc(47px - #{$item-spacing});
   @include centered;
 
   h2,
@@ -33,12 +36,18 @@
     text-align: left;
     background-color: clr.$dark;
     width: 90%;
-    margin-bottom: 16px;
+    margin-bottom: $item-spacing;
+    border-radius: sizes.$sm;
+    box-shadow: sizes.$shadow-sm;
     padding: 20px;
-    height: 152px;
+    height: 155px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    img {
+      width: fit-content;
+    }
 
     h3 {
       font-size: 1.8rem;

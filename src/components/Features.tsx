@@ -1,6 +1,10 @@
 import React from "react";
 
 import logo from "../assets/batabit.svg";
+import dollarIcon from "../assets/dollar-sign.svg";
+import clockIcon from "../assets/clock.svg";
+import eyeIcon from "../assets/eye.svg";
+import checkIcon from "../assets/check-circle.svg";
 import "../scss/components/features.scss";
 
 const Features = () => {
@@ -9,25 +13,25 @@ const Features = () => {
       title: "Tiempo real",
       description:
         "Nuestro API toma información minuto a minuto sobre las tasas que más determinan el comportamiento.",
-      icon: "../assets/dollar-sign.svg",
+      icon: clockIcon,
     },
     {
       title: "No hay tasas escondidas",
       description:
         "Ni en la compra o al momento de exit, Batabit siempre te muestra el costo real de lo que estás adquiriendo.",
-      icon: "../assets/dollar-sign.svg",
+      icon: eyeIcon,
     },
     {
       title: "Compara monedas",
       description:
         "Ni en la compra o al momento de exit, Batabit siempre te muestra el costo real de lo que estás adquiriendo.",
-      icon: "../assets/dollar-sign.svg",
+      icon: dollarIcon,
     },
     {
       title: "Información confiable",
       description:
         "Nuestras fuentes están 100% verificadas y continuamos auditando su contenido mientras se actualizan.",
-      icon: "../assets/dollar-sign.svg",
+      icon: checkIcon,
     },
   ];
 
