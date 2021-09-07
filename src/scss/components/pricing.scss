@@ -77,8 +77,34 @@
   }
 
   &__savings {
+    font-weight: 500;
     margin: 16px 0;
     line-height: 1.4rem;
     color: clr.$dark-gray;
+  }
+
+  &__btn {
+    border: #{clr.$bitcoin-orange} solid 2px;
+    background-color: clr.$light;
+    border-radius: sizes.$md;
+    line-height: 1.4rem;
+    display: flex;
+    margin: 0 auto;
+    font-size: 1.4rem;
+    font-weight: bold;
+    align-items: center;
+    padding: 16px;
+    box-shadow: none;
+
+    &::after {
+      padding-left: 13px;
+      height: 2.1rem;
+      content: url(../../assets/arrow-right-alt.svg);
+    }
+
+    &:hover,
+    &:focus {
+      background-color: clr.$soft-orange;
+    }
   }
 }

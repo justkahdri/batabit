@@ -7,7 +7,7 @@ import rightArrow from "../assets/arrow-right.svg";
 
 const Pricing = () => {
   return (
-    <section className="pricing">
+    <section className="pricing" id="pricing">
       <div className="pricing__title-container">
         <h2>Escoge el plan que mejor se ajuste a ti.</h2>
         <p>Cualquier plan te da acceso completo a nuestra plataforma.</p>

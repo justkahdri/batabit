@@ -9,7 +9,7 @@ const Header = () => {
       <div className="header__title-container">
         <h1>La próxima revolución en el intercambio de criptomonedas</h1>
         <p>BataBit te ayuda navegar entre los diferentes precios y tendendcias.</p>
-        <a className="header__button" href="">
+        <a className="header__button" href="#pricing">
           Conoce nuestros planes <span />
         </a>
       </div>
